@@ -4,11 +4,12 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
-plugins=(git gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search)
+plugins=(git gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search ssh-agent)
 
 # (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
 
+ZSH_DISABLE_COMPFIX=true
 # Actually load Oh-My-Zsh
 source "${ZSH}/oh-my-zsh.sh"
 unalias rm # No interactive rm by default (brought by plugins/common-aliases)
@@ -33,6 +34,7 @@ export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 # Load 'lewagon' virtualenv for the Data Bootcamp. You can comment these 2 lines to disable this behavior.
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 pyenv activate lewagon 2>/dev/null && echo "🐍 Loading 'lewagon' virtualenv"
+# pyenv activate fakenews 2>/dev/null && echo "🐍 Loading 'fakenews' virtualenv"
 
 # Store your own aliases in the ~/.aliases file and load the here.
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
@@ -41,3 +43,16 @@ pyenv activate lewagon 2>/dev/null && echo "🐍 Loading 'lewagon' virtualenv"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
+export BROWSER=/mnt/c/Users/Vincent/AppData/Local/Vivaldi/Application/vivaldi.exe
+export PYTHONPATH=/home/vincent/code/vtmoreau/data-challenges/04-Decision-Science:$PYTHONPATH
+export ML_FLOW_URI="https://mlflow.lewagon.co/"
+export TOR_CREDENTIALS=$(cat /home/vincent/.keys/tor.key)
+export TOR_PROXY_PORT="8118"
+# export GOOGLE_APPLICATION_CREDENTIALS=/mnt/d/Documents/Various/fake-news-297513-5f6afefcc8cd.json
+# export GOOGLE_APPLICATION_CREDENTIALS=/mnt/d/Documents/Various/WagonBootcamp-0cb1b9ea7c90.json
+
+# NALDO
+[[ -f "$HOME/.naldo_config" ]] && source "$HOME/.naldo_config"
+
+# AFP
+[[ -f "$HOME/.afp_config" ]] && source "$HOME/.afp_config"

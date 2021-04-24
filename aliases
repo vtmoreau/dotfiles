@@ -3,4 +3,29 @@ alias myip="curl https://ipinfo.io/json" # or /ip for plain-text ip
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 
 # Quickly serve the current directory as HTTP
-alias serve='ruby -run -e httpd . -p 8000' # Or python -m SimpleHTTPServer :)
+alias serve="python -m http.server 8000" # Or python -m SimpleHTTPServer :)
+
+# Terminal
+alias clr="clear"
+
+# Windows
+alias winex="explorer.exe ."
+alias winbox="/mnt/d/LinuxDropBox"
+
+# PyEnvs
+alias venvs="pyenv virtualenvs"
+
+# Jupyter
+alias jn="jupyter notebook"
+
+# Pip
+alias pin="pip install"
+
+# VSCode
+alias vsc="code ."
+
+# iPython
+alias ipy="ipython"
+
+# Docker
+alias dok="docker"
